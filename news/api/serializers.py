@@ -4,12 +4,12 @@ from .models import News_data
 # class Data_Serializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = News_data
-#         fields = ['title', 'type', 'content']
+#         fields = '__all__'
 
 class Data_Serializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     title = serializers.CharField(max_length=100)
-    type = serializers.CharField(max_length=50)
+    category = serializers.CharField(max_length=50)
     content = serializers.CharField(max_length=500)
 
     def create(self, validated_data):
