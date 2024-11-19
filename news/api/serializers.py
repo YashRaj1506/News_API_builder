@@ -13,15 +13,9 @@ class Data_Serializer(serializers.Serializer):
     content = serializers.CharField(max_length=500)
 
     def create(self, validated_data):
-        """
-        Create and return a new `Snippet` instance, given the validated data.
-        """
         return News_data.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
-        """
-        Update and return an existing `Snippet` instance, given the validated data.
-        """
         instance.title = validated_data.get('title', instance.title)
         instance.type = validated_data.get('type', instance.type)
         instance.content = validated_data.get('content', instance.content)

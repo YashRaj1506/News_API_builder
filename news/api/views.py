@@ -21,7 +21,6 @@ def data_list(request):
     """
     Lists all data on the Web UI
     """
-
     if request.method == 'GET':
         data = News_data.objects.all()
         serializer = Data_Serializer(data, many=True)
@@ -34,3 +33,23 @@ def data_list(request):
             serializer.save()
             return JsonResponse(serializer.data, status=201)
         return Response(serializer.errors, status=400)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def politics_list(request):
+
+    if request.method == 'GET':
+        data = News_data.objects.filter(category='politics')
+        serializer = Data_Serializer(data, many=True)
+        return Response(serializer.data)
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def sports_list(request):
+
+    if request.method == 'GET':
+        data = News_data.objects.filter(category='sports')
+        serializer = Data_Serializer(data, many=True)
+        return Response(serializer.data)
+

@@ -12,3 +12,6 @@ class News_data(models.Model):
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='news')
     content = models.CharField(max_length=5000)
 
+    def __str__(self):
+        return self.title
+
