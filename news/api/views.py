@@ -53,3 +53,13 @@ def sports_list(request):
         serializer = Data_Serializer(data, many=True)
         return Response(serializer.data)
 
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def economy_list(request):
+
+    if request.method == 'GET':
+        data = News_data.objects.filter(category='economy')
+        serializer = Data_Serializer(data, many=True)
+        return Response(serializer.data)
+

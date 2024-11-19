@@ -75,39 +75,43 @@ def indiatoday(url):
                 print()
                 print("ENDS" + " " + f" news {i}")
 
+                for j in content_block_collected:
+                    print(j)
+
+
         # print(content_block_collected)
             # print(feed_data)
     else:
         print(f"Failed to fetch RSS feed: {response.status_code}")
 
     load_dotenv()
-    genai.configure(api_key=os.environ.get('GENAI_API_KEY'))
+    # genai.configure(api_key=os.environ.get('GENAI_API_KEY'))
 
     # Create the model
-    generation_config = {
-      "temperature": 1,
-      "top_p": 0.95,
-      "top_k": 64,
-      "max_output_tokens": 8192,
-      "response_mime_type": "text/plain",
-    }
-
-    model = genai.GenerativeModel(
-      model_name="gemini-1.5-flash",
-      generation_config=generation_config,
-    )
-
-    chat_session = model.start_chat(
-      history=[
-      ]
-    )
-
-    summarize_data = []
-
-    for refined_text in content_block_collected:
-        response = chat_session.send_message(f"rephrase the given content into one paragraph: {refined_text}")
-        summarize_data.append(response.text)
-        print(response.text)
+    # generation_config = {
+    #   "temperature": 1,
+    #   "top_p": 0.95,
+    #   "top_k": 64,
+    #   "max_output_tokens": 8192,
+    #   "response_mime_type": "text/plain",
+    # }
+    #
+    # model = genai.GenerativeModel(
+    #   model_name="gemini-1.5-flash",
+    #   generation_config=generation_config,
+    # )
+    #
+    # chat_session = model.start_chat(
+    #   history=[
+    #   ]
+    # )
+    #
+    # summarize_data = []
+    #
+    # for refined_text in content_block_collected:
+    #     response = chat_session.send_message(f"rephrase the given content into one paragraph: {refined_text}")
+    #     summarize_data.append(response.text)
+    #     print(response.text)
 
     print("_______________________")
 
@@ -404,5 +408,6 @@ if __name__ == "__main__":
     url_livemint = "https://www.livemint.com/rss/companies"
     url_nytimes = "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
     url_timesofindia = "https://timesofindia.indiatimes.com/rssfeedstopstories.cms"
-    TimesofIndia(url_timesofindia)
+    # TimesofIndia(url_timesofindia)
     # nytimes(url_nytimes)
+    indiatoday(url_indiatoday)
