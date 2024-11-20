@@ -11,7 +11,7 @@ class News_data(models.Model):
     # ]
     title = models.CharField(max_length=500)
     category = models.CharField(max_length=50)
-    content = models.CharField(max_length=5000)
+    content = models.CharField(max_length=50000)
 
     def __str__(self):
         return self.title

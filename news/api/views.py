@@ -64,6 +64,6 @@ def economy_list(request):
         serializer = Data_Serializer(data, many=True)
         return Response(serializer.data)
 
-def test(request):
+def creating_object(request):
     test_func.delay()
-    return HttpResponse('test')
+    return HttpResponse('Done')
