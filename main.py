@@ -113,6 +113,7 @@ def indiatoday(url):
     for refined_text in content_block_collected:
         summarize_data.append(refined_text)
         print(refined_text)
+        break
 
     print("_______________________")
 
