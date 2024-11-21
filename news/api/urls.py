@@ -7,5 +7,8 @@ urlpatterns = [
     path('politics/', views.politics_list),
     path('economy/', views.economy_list),
     path('sports/', views.sports_list),
-    path('test/', views.creating_object),
+    path('science/', views.science_list),
+    path('world/', views.world_list),
+    path('space/', views.space_list),
+    # path('test/', views.creating_object),
 ]

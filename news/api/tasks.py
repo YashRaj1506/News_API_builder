@@ -1,7 +1,7 @@
 from celery import shared_task
 from api.webscraper import scraper
 
-from api.webscraper.scraper import scrape_news_indiatoday_func
+from api.webscraper.scraper import scrape_news_indiatoday_func, scrape_news_nytimes_func
 
 
 @shared_task(bind=True)
@@ -14,4 +14,13 @@ def test_not_func(self):
 @shared_task(bind=True)
 def test_func(self):
     scrape_news_indiatoday_func('https://www.indiatoday.in/rss/1206550', 'sports')
+    scrape_news_indiatoday_func('https://www.indiatoday.in/rss/1206513', 'economy')
+    scrape_news_indiatoday_func('https://www.indiatoday.in/rss/1206577', 'world')
+    scrape_news_indiatoday_func('https://www.indiatoday.in/rss/1206504', 'society&arts')
+
+    scrape_news_nytimes_func('https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml', 'politics')
+    scrape_news_nytimes_func('https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml', 'sports')
+    scrape_news_nytimes_func('https://rss.nytimes.com/services/xml/rss/nyt/Science.xml', 'science')
+    scrape_news_nytimes_func('https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml', 'environment')
+    scrape_news_nytimes_func('https://rss.nytimes.com/services/xml/rss/nyt/Space.xml', 'space')
     return "Done"

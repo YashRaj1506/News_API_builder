@@ -64,6 +64,30 @@ def economy_list(request):
         serializer = Data_Serializer(data, many=True)
         return Response(serializer.data)
 
-def creating_object(request):
-    test_func.delay()
-    return HttpResponse('Done')
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def world_list(request):
+
+    if request.method == 'GET':
+        data = News_data.objects.filter(category='world')
+        serializer = Data_Serializer(data, many=True)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def science_list(request):
+
+    if request.method == 'GET':
+        data = News_data.objects.filter(category='science')
+        serializer = Data_Serializer(data, many=True)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def space_list(request):
+
+    if request.method == 'GET':
+        data = News_data.objects.filter(category='space')
+        serializer = Data_Serializer(data, many=True)
+        return Response(serializer.data)
+
