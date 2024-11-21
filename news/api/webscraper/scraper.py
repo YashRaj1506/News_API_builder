@@ -80,12 +80,14 @@ def scrape_news_indiatoday_func(url, category):
                     for p_tag in p_tags:
 
                         content_block_collected_local_topass = content_block_collected_local_topass + p_tag.text
-                        content_block_collected_local_topass = content_block_collected_local_topass + "\n"
+                        content_block_collected_local_topass = content_block_collected_local_topass # + "\n" (removed it for now)
 
                     content_block_collected_topass.append(content_block_collected_local_topass)
 
                     object_creation = News_data.objects.create(title=title_topass, category=category,content=content_block_collected_local_topass)
                     object_creation.save()
+
+                    # time.sleep(0.1)
 
                     # print(content_block_collected_local)
                     break
@@ -184,12 +186,14 @@ def scrape_news_nytimes_func(url, category):
                     for p_tag in p_tags:
 
                         content_block_collected_local_topass = content_block_collected_local_topass + p_tag.text
-                        content_block_collected_local_topass = content_block_collected_local_topass + "\n"
+                        content_block_collected_local_topass = content_block_collected_local_topass  # + "\n" (rmeoved it for now)
 
                     content_block_collected_topass.append(content_block_collected_local_topass)
 
                     object_creation = News_data.objects.create(title=title_topass, category=category,content=content_block_collected_local_topass)
                     object_creation.save()
+
+                    # time.sleep(0.1)
 
                     # print(content_block_collected_local)
                     break
@@ -232,10 +236,10 @@ def scrape_news_nytimes_func(url, category):
         break
 
 
-if __name__ == "__main__":
-    url_indiatoday = "https://www.indiatoday.in/rss/1206550"
-    url_livemint = "https://www.livemint.com/rss/companies"
-    url_nytimes = "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
-    url_timesofindia = "https://timesofindia.indiatimes.com/rssfeedstopstories.cms"
+# if __name__ == "__main__":
+    # url_indiatoday = "https://www.indiatoday.in/rss/1206550"
+    # url_livemint = "https://www.livemint.com/rss/companies"
+    # url_nytimes = "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    # url_timesofindia = "https://timesofindia.indiatimes.com/rssfeedstopstories.cms"
 
-    scrape_news_indiatoday_func(url_indiatoday,'sports')
+    # scrape_news_indiatoday_func(url_indiatoday,'sports')

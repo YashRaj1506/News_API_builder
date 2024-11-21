@@ -3,6 +3,8 @@ from api.webscraper import scraper
 
 from api.webscraper.scraper import scrape_news_indiatoday_func, scrape_news_nytimes_func
 
+from api.webscraper.helper_functions import create_superuser, flush_database
+
 
 @shared_task(bind=True)
 def test_not_func(self):
@@ -13,6 +15,11 @@ def test_not_func(self):
 
 @shared_task(bind=True)
 def test_func(self):
+
+    flush_database()
+
+    create_superuser('yash', 'yash@gmail.com', 'yash')
+
     scrape_news_indiatoday_func('https://www.indiatoday.in/rss/1206550', 'sports')
     scrape_news_indiatoday_func('https://www.indiatoday.in/rss/1206513', 'economy')
     scrape_news_indiatoday_func('https://www.indiatoday.in/rss/1206577', 'world')
