@@ -4,6 +4,7 @@ import os
 from celery import Celery
 from django.conf import settings
 from celery.schedules import crontab
+# from django_celery_beat.models import PeriodicTask
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "news.settings")
 
@@ -20,7 +21,8 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 app.conf.beat_schedule = {
     'scrape data again every 15 min' : {
         'task': 'api.tasks.test_func',
-        'schedule': crontab(hour= 23, minute=7),
+        'schedule': crontab('*/5'),
+        # 'schedule': crontab(hour= 23, minute=7),
         # 'args' : ()
 
     }
