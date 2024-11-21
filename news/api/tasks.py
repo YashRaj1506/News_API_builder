@@ -1,7 +1,7 @@
 from celery import shared_task
 from api.webscraper import scraper
 
-from api.webscraper.scraper import scrape_news_indiatoday_func, scrape_news_nytimes_func
+from api.webscraper.scraper import scrape_news_indiatoday_func, scrape_news_nytimes_func, scrape_news_livemint_func
 
 from api.webscraper.helper_functions import create_superuser, flush_database
 
@@ -30,4 +30,10 @@ def test_func(self):
     scrape_news_nytimes_func('https://rss.nytimes.com/services/xml/rss/nyt/Science.xml', 'science')
     scrape_news_nytimes_func('https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml', 'environment')
     scrape_news_nytimes_func('https://rss.nytimes.com/services/xml/rss/nyt/Space.xml', 'space')
+
+    scrape_news_livemint_func('https://www.livemint.com/rss/sports','sports')
+    scrape_news_livemint_func('https://www.livemint.com/rss/politics','politics')
+    scrape_news_livemint_func('https://www.livemint.com/rss/money','economy')
+    scrape_news_livemint_func('https://www.livemint.com/rss/science','science')
+    scrape_news_livemint_func('https://www.livemint.com/rss/education','Education')
     return "Done"
