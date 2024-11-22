@@ -5,7 +5,9 @@ services:
     build:
       context: ./news
     container_name: news
-    command: python manage.py runserver 0.0.0.0:8000
+    command: >
+      bash -c "python manage.py migrate --noinput &&
+               python manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./news:/app
     env_file:
@@ -26,7 +28,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - "5430:5432"
+      - "5432:5432"
 
   redis:
     image: redis:7
