@@ -107,3 +107,7 @@ After you have done all the things mentioned above, Go to your browser and hit t
 First thing you will see will look something like this:
 
 ![img.png](img.png)
+
+If you click on Sports News, you will be redirected to the respected API which was build
+
+![img_1.png](img_1.png)
