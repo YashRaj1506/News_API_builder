@@ -103,3 +103,7 @@ And KABOOM!! It will work now!!
 After you have done all the things mentioned above, Go to your browser and hit the url
 
 `0.0.0.0:8000`
+
+First thing you will see will look something like this:
+
+![img.png](img.png)
