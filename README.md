@@ -1,5 +1,5 @@
 
-# News Scrapper
+# News Scrapper Api
 
 A powerfull Python script made using BeautifulSoup library and feedparser.
 
@@ -13,34 +13,83 @@ To set up the tool/script, Do the Installation and Environement Vairable Section
 
 ## Installation
 
-First, git clone the repo to your local.
+We highly recommend you have Docker setup on your Linux/Mac/Windows, because it is better to use it over with 
+Docker to see all the Logs and process happening at one place. 
+
+The following setup will also use DockerFile and Docker-Compose.
+
+First, Git clone the repo to your local.
 
 ```bash
-  git clone "repo"
+  git clone https://github.com/YashRaj1506/News_API
 ```
 
-Install project requirements with pip, and run the following command.
+Now we will build the images with Docker and run it with the following commands
 
 ```bash
-  pip install -r requirements.txt
+  docker-compose build 
+```
+
+```bash
+  docker-compose up
 ```
     
 ## Environment Variables
 
 Create a file called .env in the root directory.
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following environment variables to your `.env` file
 
-`GENAI_API_KEY`
+We have added some by default values, so that you can understand what to fill it with. 
+You are free to change the values according to your system.
 
-like 
+```bash
+POSTGRES_USER=postgres 
+POSTGRES_PASSWORD=postgres
+POSTGRES_DB=postgres
+POSTGRES_DOCKER_HOST=postgres
+POSTGRES_PORT=5432
 
-GENAI_API_KEY = "Your Api key"
+REDIS_URL=redis://redis_cache:6379/0
+CELERY_BROKER_URL=redis://redis_cache:6379/0
+
+SECRET_KEY= 'djangojajajjssd56531315vd1v5d'
+```
 
 
 
 
-## How to Use the tool
+## How to Use the tool by customizing it
 
-Now, Just run the script in your IDE and within the main.py code base put the respective URL's that you want to use and get the data.
+So now that you have setup the tool on your system, following text will explain you how can 
+you customize the schedule/timings of the program
 
+Go to the file `celery.py` inside directory `news/news`
+
+inside the follwing code, there are two options, 
+
+`option 1` represent a repetetive task, means if */5 is written the process will keep repeating every 5 minutes, updating the API's and db with fresh news data.
+
+`option 2` represent a single task, means at single hour and minute of the day it will do the following task once in a day.
+```bash
+app.conf.beat_schedule = {
+    'scrape data again every 15 min' : {
+        'task': 'api.tasks.test_func',
+        'schedule': crontab('*/5'), #1st option
+        # 'schedule': crontab(hour= 12, minute=45), #2nd option
+
+    }
+}
+```
+
+Now if you have made changes, run the docker commands again. Build the images and run the conatiner with compose, by following commands:
+
+```bash
+  docker-compose build 
+```
+
+```bash
+  docker-compose up
+```
+
+And KABOOM!! It will work now!!
