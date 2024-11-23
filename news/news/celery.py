@@ -21,9 +21,8 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 app.conf.beat_schedule = {
     'scrape data again every 15 min' : {
         'task': 'api.tasks.test_func',
-        'schedule': crontab('*/10'),
+        'schedule': crontab('*/5'),
         # 'schedule': crontab(hour= 12, minute=45),
-        # 'args' : ()
 
     }
 }
