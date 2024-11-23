@@ -3,6 +3,10 @@
 
 A powerfull Python script made using BeautifulSoup library and feedparser.
 
+It's Workflow looks something like this:
+
+![WorkFlow.png](WorkFlow.png)
+
 
 ## Documentation
 
