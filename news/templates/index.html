@@ -1,12 +1,31 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>News API Navigator</title>
+    <link rel="stylesheet" href="static/css/main.css"/>
 </head>
 <body>
-<button>Go to api</button>
+    <nav class="navbar">
+        <div class="welcome">Welcome</div>
+        <a href="https://github.com/YashRaj1506/News_API_builder" class="github-link">
+            GitHub
+        </a>
+    </nav>
+
+    <div class="container">
+        <h1>Navigate to APIs</h1>
+        <div class="button-container">
+            <a href="http://0.0.0.0:8000/sports"><button class="news-button">Sports News</button></a>
+            <a href="http://0.0.0.0:8000/economy"><button class="news-button">Economy News</button></a>
+            <a href="http://0.0.0.0:8000/politics"><button class="news-button">Politics News</button></a>
+            <a href="http://0.0.0.0:8000/science"><button class="news-button">Science News</button></a>
+            <a href="http://0.0.0.0:8000/society"><button class="news-button">Society&arts News</button></a>
+            <a href="http://0.0.0.0:8000/environment"><button class="news-button">Environment News</button></a>
+            <a href="http://0.0.0.0:8000/space"><button class="news-button">Space News</button></a>
+            <a href="http://0.0.0.0:8000/world"><button class="news-button">World News</button></a>
+        </div>
+    </div>
 </body>
 </html>

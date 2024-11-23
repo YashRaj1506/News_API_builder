@@ -54,6 +54,10 @@ REDIS_URL=redis://redis_cache:6379/0
 CELERY_BROKER_URL=redis://redis_cache:6379/0
 
 SECRET_KEY= 'djangojajajjssd56531315vd1v5d'
+
+SUPERUSER_NAME=dummy
+SUPERUSER_EMAIL=dummy@gmail.com
+SUPERUSER_PASSWORD=dummy
 ```
 
 
@@ -93,3 +97,9 @@ Now if you have made changes, run the docker commands again. Build the images an
 ```
 
 And KABOOM!! It will work now!!
+
+## Viewing API's
+
+After you have done all the things mentioned above, Go to your browser and hit the url
+
+`0.0.0.0:8000`

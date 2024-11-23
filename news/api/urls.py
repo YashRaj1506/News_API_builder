@@ -10,5 +10,7 @@ urlpatterns = [
     path('science/', views.science_list),
     path('world/', views.world_list),
     path('space/', views.space_list),
-    # path('test/', views.creating_object),
+    path('society/', views.society_list),
+    path('environemnt/', views.environment_list),
+
 ]

@@ -87,7 +87,7 @@ def scrape_news_indiatoday_func(url, category):
                     object_creation = News_data.objects.create(title=title_topass, category=category,content=content_block_collected_local_topass)
                     object_creation.save()
 
-                    # time.sleep(0.1)
+                    time.sleep(1)
 
                     # print(content_block_collected_local)
                     break
@@ -193,7 +193,7 @@ def scrape_news_nytimes_func(url, category):
                     object_creation = News_data.objects.create(title=title_topass, category=category,content=content_block_collected_local_topass)
                     object_creation.save()
 
-                    # time.sleep(0.1)
+                    time.sleep(1)
 
                     # print(content_block_collected_local)
                     break
@@ -299,7 +299,7 @@ def scrape_news_livemint_func(url, category):
                     object_creation = News_data.objects.create(title=title_topass, category=category,content=content_block_collected_local_topass)
                     object_creation.save()
 
-                    # time.sleep(0.1)
+                    time.sleep(1)
 
                     # print(content_block_collected_local)
                     break
@@ -349,3 +349,4 @@ def scrape_news_livemint_func(url, category):
     # url_timesofindia = "https://timesofindia.indiatimes.com/rssfeedstopstories.cms"
 
     # scrape_news_indiatoday_func(url_indiatoday,'sports')
+    # scrape_news_nytimes_func('https://rss.nytimes.com/services/xml/rss/nyt/Space.xml', 'space')

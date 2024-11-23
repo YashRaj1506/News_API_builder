@@ -91,3 +91,20 @@ def space_list(request):
         serializer = Data_Serializer(data, many=True)
         return Response(serializer.data)
 
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def society_list(request):
+
+    if request.method == 'GET':
+        data = News_data.objects.filter(category='society&arts')
+        serializer = Data_Serializer(data, many=True)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def environment_list(request):
+
+    if request.method == 'GET':
+        data = News_data.objects.filter(category='environment')
+        serializer = Data_Serializer(data, many=True)
+        return Response(serializer.data)
