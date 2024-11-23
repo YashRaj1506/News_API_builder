@@ -47,6 +47,7 @@ To run this project, you will need to add the following environment variables to
 We have added some by default values, so that you can understand what to fill it with. 
 You are free to change the values according to your system.
 
+
 ```bash
 POSTGRES_USER=postgres 
 POSTGRES_PASSWORD=postgres
@@ -115,3 +116,9 @@ First thing you will see will look something like this:
 If you click on Sports News, you will be redirected to the respected API which was build
 
 ![img_1.png](img_1.png)
+
+## More Info
+
+Hey Everyone, Thank you for going through the Doc, This is the first version of the release and it needs a lot of Improvements and more optimal solutions, and hence as a open source initiative i welcome you all to work on this project. I will list and open the issues soon. Thank you!!
+
+FUN FACT: This project's first version is being released after 4 days of work HAHA.

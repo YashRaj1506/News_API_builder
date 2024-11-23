@@ -6,6 +6,7 @@ from .models import News_data
 #         model = News_data
 #         fields = '__all__'
 
+
 class Data_Serializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     title = serializers.CharField(max_length=100)
@@ -16,9 +17,8 @@ class Data_Serializer(serializers.Serializer):
         return News_data.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
-        instance.title = validated_data.get('title', instance.title)
-        instance.type = validated_data.get('type', instance.type)
-        instance.content = validated_data.get('content', instance.content)
+        instance.title = validated_data.get("title", instance.title)
+        instance.type = validated_data.get("type", instance.type)
+        instance.content = validated_data.get("content", instance.content)
         instance.save()
         return instance
-
