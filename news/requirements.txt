@@ -24,6 +24,7 @@ django-filter==24.3
 django-timezone-field==7.0
 djangorestframework==3.15.2
 dnspython==2.7.0
+drf-yasg==1.21.8
 email_validator==2.2.0
 exceptiongroup==1.2.2
 fastapi==0.115.5
@@ -45,6 +46,7 @@ httplib2==0.22.0
 httptools==0.6.4
 httpx==0.27.2
 idna==3.10
+inflection==0.5.1
 Jinja2==3.1.4
 kombu==5.4.2
 lxml==5.3.0
@@ -70,6 +72,7 @@ python-crontab==3.2.0
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 python-multipart==0.0.17
+pytz==2024.2
 PyYAML==6.0.2
 redis==5.2.0
 requests==2.32.3

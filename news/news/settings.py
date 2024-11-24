@@ -46,7 +46,16 @@ INSTALLED_APPS = [
     'django_celery_results',
     'django_celery_beat',
     'django_extensions',
+    'drf_yasg',
 ]
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Basic': {
+            'type': 'basic'
+        }
+    }
+}
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
