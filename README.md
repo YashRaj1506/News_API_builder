@@ -109,6 +109,12 @@ After you have done all the things mentioned above, Go to your browser and hit t
 
 `0.0.0.0:8000`
 
+Swagger API documentations available at 
+
+`0.0.0.0:8000/swagger`
+
+![img_2.png](img_2.png)
+
 First thing you will see will look something like this:
 
 ![img.png](img.png)
