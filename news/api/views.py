@@ -19,7 +19,7 @@ def homepage(request):
     return render(request, "index.html")
 
 
-@api_view(["GET", "POST"])
+@api_view(["GET"])
 @permission_classes([AllowAny])
 def data_list(request):
     """
