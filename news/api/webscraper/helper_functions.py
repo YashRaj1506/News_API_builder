@@ -1,5 +1,8 @@
 import subprocess
 
+#Below functions are just helper functions which uses django commands
+#to manage the flow of the process.
+
 def flush_database():
     """
     Flush the database, removing all data but preserving the schema.
