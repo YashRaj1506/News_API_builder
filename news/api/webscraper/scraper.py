@@ -112,6 +112,10 @@ def scrape_news_indiatoday_func(url, category):
     else:
         print(f"Failed to fetch RSS feed: {response.status_code}")
 
+
+    #this part of block supports content refining according to use which
+    #currently uses gemini api configs
+
     # Commented because of future idea purposes :)
     # load_dotenv()
     # genai.configure(api_key=os.environ.get('GENAI_API_KEY'))
